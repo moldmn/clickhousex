@@ -34,7 +34,7 @@ defmodule Clickhousex.Codec.JSON do
   end
 
   @impl Codec
-  def decode("") do
+  def decode([]) do
     {:ok, %{}}
   end
 
