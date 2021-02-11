@@ -34,6 +34,10 @@ defmodule Clickhousex.Codec.JSON do
   end
 
   @impl Codec
+  def decode("") do
+    {:ok, %{}}
+  end
+
   def decode(response) do
     case Jason.decode(response) do
       {:ok, %{"meta" => meta, "data" => data, "rows" => row_count}} ->
